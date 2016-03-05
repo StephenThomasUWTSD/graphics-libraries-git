@@ -1,4 +1,4 @@
-﻿Build started 01/03/2016 20:58:26.
+﻿Build started 05/03/2016 22:46:33.
      1>Project "C:\Users\macab\Desktop\GraphicsTemplate\GraphicsTemplate.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Development\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\GraphicsTemplate.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GraphicsTemplate.cpp
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.58
+Time Elapsed 00:00:00.34

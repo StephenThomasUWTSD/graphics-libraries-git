@@ -185,7 +185,7 @@ void winReshapeFunc(GLint w, GLint h)
 ////////////////////////////
 ///////////////////////////////LINE ALGORITHMS//////////////
 ///////////////////////////////////////////////////////
-void cRenderClass::line(int x1, int x2, int y1, int y2)
+void cRenderClass::line(int x1, int y1, int x2, int y2)
 {
 	//renderer->drawPixel(x1, y1);
 	//graphics->setColour(1.0f, 1.0f, 1.0f);

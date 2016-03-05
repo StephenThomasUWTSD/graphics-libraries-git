@@ -24,7 +24,7 @@ void renderScene()
 
 	// draw to an off screen buffer
 	graphics.drawPixel( 250, 250 );
-	graphics.line(40, 30, 20,10);
+	graphics.line(10, 15, 20,25);
 	// render the scene
 	graphics.render();
 }
