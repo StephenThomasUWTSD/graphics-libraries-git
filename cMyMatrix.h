@@ -3,8 +3,8 @@
 class cMyMatrix
 {
 public:
-	cMyMatrix(){}
-	~cMyMatrix(){}
+	cMyMatrix();
+	~cMyMatrix();
 	//identity matrix
 	void identity();
 
@@ -18,6 +18,7 @@ public:
 	void nuScaleX(float value);
 	void nuScaleY(float value);
 	void nuScaleZ(float value);
+	void nonUScale(float x, float y, float z);
 
 	//rotation matrix
 	void rotationX(float value);
@@ -48,7 +49,7 @@ private:
 	float v[4];
 	//4x4 matrix
 	float m[16];
-	//second 4x4 matrix
+	////second 4 4 matrix
 	float m2[16];
 	//float m3[16];
 };

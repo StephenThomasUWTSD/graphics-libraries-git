@@ -17,8 +17,16 @@ public:
 	void setPointSize(int);
 	void drawPixel(int, int);
 	void line(int,int,int,int);
-private:
+	void bresenhamsLine(int, int, int, int);
+	void DDALine(float, float, float, float);
+	float SetM(float M);
 
+	float Dx;
+	float Dy;
+
+	float M;
+private:
+	
 	int		 m_sw, m_sh;
 	int		 m_point_size;
 	float	*m_buffer;

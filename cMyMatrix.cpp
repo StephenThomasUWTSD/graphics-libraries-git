@@ -1,5 +1,13 @@
 
 #include "stdafx.h" //throws up horrendous amounts of errors
+
+#define _USE_MATH_DEFINES
+#include <math.h>
+cMyMatrix::cMyMatrix()
+{
+	identity();
+}
+//#define pi 3.14....
 //cMyMatrix MyMatrix;
 //identity matrix
 void cMyMatrix::identity()
@@ -62,6 +70,26 @@ void cMyMatrix::nuScaleZ(float value)
 	m[10] = m[10] * value;
 }
 
+
+//NOT HOW THE FUNCTION WILL BE I KNOW THIS IS TERRIBLE JUST RUNNING THROUGH STUFF IN MY HEAD
+void cMyMatrix::nonUScale(float x, float y, float z)
+{
+	if (x > 0.0)
+	{
+
+		m[0] = m[0] * x;
+	}
+	if (y>0.0)
+	{
+		m[5] = m[5] * y;
+	}
+	if (z>0.0)
+	{
+	m[10] = m[10] * z;
+	}
+}
+
+//can make rotation one function
 //rotation matrix
 void cMyMatrix::rotationX(float value)
 {
@@ -108,14 +136,15 @@ void cMyMatrix::stepThroughMatrix(float value)
 	}
 }
 
+//only needs one matrix
 //matrix multiplication
 void cMyMatrix::multiplyMatrix()
 {
 	float m3[16];//define locally
-	m3[0] = m[0] * m2[0] + m[1] * m2[4] + m[2] * m2[8] + m[3] * m2[12];        m3[1] = m[0] * m2[1] + m[1] * m2[5] + m[2] * m2[9] + m[3] * m2[13];        m3[2] = m[0] * m2[2] + m[1] * m2[6] + m[2] * m2[10] + m[3] * m2[14];        m3[3] = m[0] * m2[3] + m[1] * m2[7] + m[2] * m2[11] + m[3] * m2[15];
-	m3[4] = m[4] * m2[0] + m[5] * m2[4] + m[6] * m2[8] + m[7] * m2[12];        m3[5] = m[4] * m2[1] + m[5] * m2[5] + m[6] * m2[9] + m[7] * m2[13];        m3[6] = m[4] * m2[2] + m[5] * m2[6] + m[6] * m2[10] + m[7] * m2[14];        m3[7] = m[4] * m2[3] + m[5] * m2[7] + m[6] * m2[11] + m[7] * m2[15];
-	m3[8] = m[8] * m2[0] + m[9] * m2[4] + m[10] * m2[8] + m[11] * m2[12];      m3[9] = m[8] * m2[1] + m[9] * m2[5] + m[10] * m2[9] + m[11] * m2[13];      m3[10] = m[8] * m2[2] + m[9] * m2[6] + m[10] * m2[10] + m[11] * m2[14];     m3[11] = m[8] * m2[3] + m[9] * m2[7] + m[10] * m2[11] + m[11] * m2[15];
-	m3[12] = m[12] * m2[0] + m[13] * m2[4] + m[14] * m2[8] + m[15] * m2[12];    m3[13] = m[12] * m2[1] + m[13] * m2[5] + m[14] * m2[9] + m[15] * m2[13];   m3[14] = m[12] * m2[2] + m[13] * m2[6] + m[14] * m2[10] + m[15] * m2[14];   m3[15] = m[12] * m2[3] + m[13] * m2[7] + m[14] * m2[11] + m[15] * m2[15];
+	m3[0] = (m[0] * m2[0]) + (m[1] * m2[4]) + (m[2] * m2[8]) + (m[3] * m2[12]);        m3[1] = (m[0] * m2[1]) + (m[1] * m2[5]) + (m[2] * m2[9]) + (m[3] * m2[13]);        m3[2] = (m[0] * m2[2]) + (m[1] * m2[6]) + (m[2] * m2[10]) + (m[3] * m2[14]);        m3[3] = (m[0] * m2[3]) + (m[1] * m2[7]) + (m[2] * m2[11]) + (m[3] * m2[15]);
+	m3[4] = (m[4] * m2[0]) + (m[5] * m2[4]) + (m[6] * m2[8]) + (m[7] * m2[12]);        m3[5] = (m[4] * m2[1]) + (m[5] * m2[5]) + (m[6] * m2[9]) + (m[7] * m2[13]);        m3[6] = (m[4] * m2[2]) + (m[5] * m2[6]) + (m[6] * m2[10]) + (m[7] * m2[14]);        m3[7] = (m[4] * m2[3]) + (m[5] * m2[7]) + (m[6] * m2[11]) + (m[7] * m2[15]);
+	m3[8] = (m[8] * m2[0]) + (m[9] * m2[4]) + (m[10] * m2[8]) + (m[11] * m2[12]);      m3[9] = (m[8] * m2[1]) + (m[9] * m2[5]) + (m[10] * m2[9]) + (m[11] * m2[13]);      m3[10] = (m[8] * m2[2]) + (m[9] * m2[6]) + (m[10] * m2[10]) + (m[11] * m2[14]);     m3[11] = (m[8] * m2[3]) + (m[9] * m2[7]) + (m[10] * m2[11]) + (m[11] * m2[15]);
+	m3[12] = (m[12] * m2[0]) + (m[13] * m2[4]) + (m[14] * m2[8]) + (m[15] * m2[12]);    m3[13] = (m[12] * m2[1]) + (m[13] * m2[5]) + (m[14] * m2[9]) + (m[15] * m2[13]);   m3[14] = (m[12] * m2[2]) + (m[13] * m2[6]) + (m[14] * m2[10]) + (m[15] * m2[14]);   m3[15] = (m[12] * m2[3]) + (m[13] * m2[7]) + (m[14] * m2[11]) + (m[15] * m2[15]);
 	//return m3;//return here
 
 }
@@ -133,15 +162,18 @@ void cMyMatrix::matrixByVector()
 //degrees to radians
 float cMyMatrix::degToRad(float degrees)
 {
-	return degrees / 180.0f * 3.14159265359;
+	return degrees / 180.0f * M_PI;
 }
 
 //radians to degrees
 float cMyMatrix::radToDeg(float radians)
 {
-	return radians * 180.0f / 3.14159265359;
+	return radians * 180.0f / M_PI;
 }
-
-
+//destructor
+cMyMatrix::~cMyMatrix()
+{
+	
+}
 //http://www.tutorialspoint.com/cplusplus/cpp_passing_arrays_to_functions.htm
 //http://stackoverflow.com/questions/3473438/return-array-in-a-function

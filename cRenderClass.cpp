@@ -198,7 +198,57 @@ void cRenderClass::line(int x1, int y1, int x2, int y2)
 	{
 		graphics.drawPixel(x, 15);
 	}
-		
+
 
 	//line(10, 20,15,25);
 }
+
+void cRenderClass::bresenhamsLine(int x1, int y1, int x2, int y2)
+{
+	//renderer->drawPixel(x1, y1);
+	//graphics->setColour(1.0f, 1.0f, 1.0f);
+
+	//renderer = new cRenderClass;
+	//graphics = new cRenderClass(640, 480);
+
+	//graphics->drawPixel(5, 5);
+	for (int x = x1; x < x2; x++)
+	{
+		graphics.drawPixel(x, 15);
+
+	}
+
+	//line(10, 20,15,25);
+}
+
+void cRenderClass::DDALine(float x1, float y1, float x2, float y2)
+{
+	
+
+	float M = (y2 - y1) / (x2 - x1);
+	for (int i = 0; i <= x2; i++)
+	{
+		if (M <= 1)
+		{
+			float Dx = 1.0f;
+			float Dy = M*Dx;
+			graphics.drawPixel(x1, y1);
+		}else
+		{
+			float Dy = 1.0f;
+			float Dx = Dy/M;
+			//graphics.drawPixel(x2, y2);
+		}
+		x1 = x1 + Dx;
+		y1 = y1 + Dy;
+		graphics.drawPixel(x2, y2);
+		
+	}
+}
+/*
+float cRenderClass::SetM(float M)
+{
+	float M = (y2 - y1) / (x2 - x1);
+	return M;
+}
+*/
