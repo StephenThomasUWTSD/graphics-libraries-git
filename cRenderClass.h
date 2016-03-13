@@ -19,7 +19,7 @@ public:
 	void line(int,int,int,int);
 	void bresenhamsLine(int, int, int, int);
 	void DDALine(float, float, float, float);
-	float SetM(float M);
+	//float SetM(float M);
 
 	float Dx;
 	float Dy;
