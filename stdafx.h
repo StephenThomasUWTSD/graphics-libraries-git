@@ -10,13 +10,20 @@
 #include <tchar.h>
 #include <windows.h>
 #include <math.h>
+#include <cmath>
 #include "GL/glut.h"
 #include "cMyMatrix.h"
 #include "globals.h"
 #include "cRenderClass.h"
 #include "cMyMatrix.h"
-#include "LineAlgorithms.h"
-
-
-
+#include "vector.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+#include <iterator>
 // TODO: reference additional headers your program requires here
+
+int done = 0;

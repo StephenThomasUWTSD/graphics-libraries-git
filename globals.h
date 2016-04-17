@@ -18,3 +18,4 @@ struct sRGB
 {
 	float r, g, b;
 };
+

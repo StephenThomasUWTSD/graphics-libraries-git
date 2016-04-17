@@ -34,11 +34,11 @@ void cMyMatrix::identity()
 //uniform scaling
 void cMyMatrix::uScale(float value)
 {
-	m[0]  * value;
-	m[5]  * value;
-	m[10] * value;
+	(m[0]  * value);
+	(m[5]  * value);
+	(m[10] * value);
 
-	m[15] = 1;
+	(m[15] = 1);
 
 }
 

@@ -4,6 +4,7 @@
 // includes 
 //////////////////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
+
 //#include "cMyMatrix.h"
 //////////////////////////////////////////////////////////////////////////////////////////
 // externals 
@@ -15,17 +16,21 @@ extern cRenderClass graphics;
 //////////////////////////////////////////////////////////////////////////////////////////
 void renderScene()
 {
-	
 	// set a colour
 	graphics.setColour( 1,1,1 );
 	
 	// set pixel size..
-	graphics.setPointSize(4);
-
+	graphics.setPointSize(4); 
+	
+	graphics.pointCloud(200);
+	//graphics.setColour(0.5, 0.5, 0.5);
+	
+	graphics.jarvisMarchHull(graphics.points,  );
+	
 	// draw to an off screen buffer
-	graphics.drawPixel( 250, 250 );
-	//graphics.line(10, 15, 20,25);
-	graphics.DDALine(10, 15, 25, 30);
+	//graphics.drawPixel( 250, 250 );
+	//graphics.midPoint(222, 222, 50);
+	//
 	// render the scene
 	graphics.render();
 }
@@ -48,12 +53,11 @@ void update()
 //////////////////////////////////////////////////////////////////////////////////////////
 int _tmain(int argc, _TCHAR* argv[])
 {	
-
 	// init glut stuff..
 	graphics.create(argc, argv);
 
 	// good place for one-off initialisations and objects creation..
-
+	
 	// enter game loop..
 	graphics.loop();	
 

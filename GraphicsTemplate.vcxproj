@@ -88,19 +88,19 @@
     <ClCompile Include="cMyMatrix.cpp" />
     <ClCompile Include="cRenderClass.cpp" />
     <ClCompile Include="GraphicsTemplate.cpp" />
-    <ClCompile Include="LineAlgorithms.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cMyMatrix.h" />
     <ClInclude Include="cRenderClass.h" />
     <ClInclude Include="globals.h" />
-    <ClInclude Include="LineAlgorithms.h" />
     <ClInclude Include="lookup.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
